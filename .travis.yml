@@ -7,7 +7,7 @@ python:
 
 # command to install dependencies
 install:
-  - pip install flake8 pytest autopep8 pycodestyle pylint
+  - pip install flake8 pytest autopep8 pycodestyle pylint pylint-exit
 
 before_install:
 - echo -e "machine github.com\n  login $GITHUB_TOKEN" > ~/.netrc
@@ -21,5 +21,5 @@ script:
 # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
 - flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 - pycodestyle --count --max-line-length=127 --statistics --exclude=venv ./sort
-- pylint -f colorized --ignore-patterns=venv -r y ./sort & 3
+- pylint -f colorized --ignore-patterns=venv -r y ./sort || pylint-exit $?
 - autopep8 --recursive --in-place --aggressive --aggressive ./sort
