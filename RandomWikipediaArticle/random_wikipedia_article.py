@@ -7,12 +7,11 @@ ListOfYes = ["Y", "YES", "A", "ANO", ""]
 WikiRandomArticlesResp = requests.get(WikiURL)
 if WikiRandomArticlesResp.status_code != 200:
     # This means something went wrong.
-    raise ApiError('GET '+WikiURL+' {}'.format(resp.status_code))
-
+    raise requests.ConnectionError('GET '+WikiURL+' {}'.format(WikiRandomArticlesResp.status_code))
 
 for Article in WikiRandomArticlesResp.json()["query"]["random"]:
-    Response = input('Chcete otevřít článek {} {} [Yes/no]?'.format(Article['id'], Article['title'])) or "Yes"
+    Response = input('Chcete otevřít článek {} {} [Yes/no]?'.format(Article['id'],
+                                                                    Article['title'])) or "Yes"
     if Response.upper() in ListOfYes:
         ArticleURL = "https://cs.wikipedia.org/wiki?curid="+str(Article["id"])
         webbrowser.open(ArticleURL)
-

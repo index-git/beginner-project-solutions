@@ -1,10 +1,13 @@
 MainNumber = 4679307774
-NumLen = len(str(MainNumber))
+num_len = len(str(MainNumber))
 
-SumNumber = 0
-Digit: str
-for Digit in str(MainNumber):
-    SumNumber += int(Digit)**NumLen
+sum_of_numbers = 0
+digit: str
+for digit in str(MainNumber):
+    sum_of_numbers += int(digit) ** num_len
 
-Msg = 'TRUE: Number '+str(MainNumber)+' is an Armstrong Number.' if SumNumber == MainNumber else 'FALSE Number '+str(MainNumber)+' is NOT an Armstrong Number'
-print(Msg)
+if sum_of_numbers == MainNumber:
+    message = 'TRUE: Number ' + str(MainNumber) + ' is an Armstrong Number.'
+else:
+    message = 'FALSE Number ' + str(MainNumber) + ' is NOT an Armstrong Number'
+print(message)
