@@ -1,5 +1,3 @@
-# TODO vytvořit seznam integerů <0,100)
-
 
 def bubble_sort(original_list):
     sorted_list = list(original_list)
@@ -29,5 +27,4 @@ if __name__ == "__main__":
     print(bsorted_list["comparisons_cnt"])
     print(bsorted_list["changes_cnt"])
 
-# TODO testy
 # TODO měření času, počtu porovnání, počtu výměn
