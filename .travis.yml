@@ -4,11 +4,10 @@ dist: trusty
 
 python:
   - "3.6"      # current default Python on Travis CI
-  - "3.8"
 
 # command to install dependencies
 install:
-  - pip install flake8 pytest autopep8 pycodestyle
+  - pip install flake8 pytest autopep8 pycodestyle pylint
 
 before_install:
 - echo -e "machine github.com\n  login $GITHUB_TOKEN" > ~/.netrc
@@ -21,6 +20,6 @@ script:
 - flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
 # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
 - flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-- pycodestyle --count --exclude=venv ./Sort
+- pycodestyle --count --max-line-length=127 --statistics --exclude=venv ./Sort
 - pylint -f colorized --ignore-patterns=venv -r y ./Sort
 - autopep8 --recursive --in-place --aggressive --aggressive ./Sort
