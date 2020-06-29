@@ -2,7 +2,7 @@ from unittest import TestCase
 from Sort import sort
 
 
-class TestN(TestCase):
+class TestBubbleSort(TestCase):
     def test_bubble_sort_small_num(self):
         nlist = list([2, 1])
         assert sort.bubble_sort(nlist)["sorted_list"] == sorted(nlist)
