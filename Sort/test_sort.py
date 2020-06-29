@@ -14,4 +14,3 @@ class TestN(TestCase):
     def test_bubble_sort_small_string(self):
         nlist = list(["z", "a"])
         assert sort.bubble_sort(nlist)["sorted_list"] == sorted(nlist)
-
