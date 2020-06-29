@@ -1,4 +1,5 @@
 # beginner-project-solutions
-[![CodeFactor](https://www.codefactor.io/repository/github/index-git/beginner-project-solutions/badge)](https://www.codefactor.io/repository/github/index-git/beginner-project-solutions)
 
-Learning Python
+![Python application](https://github.com/index-git/beginner-project-solutions/workflows/Python%20application/badge.svg?branch=master)
+
+Learning Python.
