@@ -37,6 +37,8 @@ jobs:
         extra-pycodestyle-options: "--max-line-length=127 --statistics"
         use-flake8: false
         use-black: false
+        use-mypy: false
+        use-isort: false
     - name: autopep8
       uses: peter-evans/autopep8@v1
       with:
