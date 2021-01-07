@@ -1,1 +1,1 @@
-Version=1.9.0-dev
+Version=1.9.0
